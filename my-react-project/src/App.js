@@ -1,11 +1,11 @@
 import "./App.css";
-import Header from "./layouts/Header";
+import NavBar from "./layouts/NavBar";
 
 function App() {
   return (
-    <div className="App">
+    <div className="text-[#252B42]">
         
-          <Header />
+          <NavBar />
         
       
     </div>
