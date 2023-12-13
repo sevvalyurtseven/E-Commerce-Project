@@ -24,7 +24,7 @@ const ProductCards = () => {
           {productCards.map((image, index) => (
             <div key={index} className="flex flex-col items-center gap-4">
               <img src={image} alt={`card ${index}`} />
-              <h5 className="text-black text-base font-bold tracking-wider pt-[0.8rem]">Graphic Design</h5>
+              <h5 className="text-black text-base font-bold tracking-wider leading-normal pt-[0.8rem]">Graphic Design</h5>
               <p className="text-[#737373] text-sm font-bold tracking-wider">English Department</p>
               <div className="flex justify-center gap-2">
                 <h5 className="text-[#BDBDBD] font-bold text-base ">$16.48</h5>
