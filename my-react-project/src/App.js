@@ -5,6 +5,7 @@ import Clients from "./layouts/Clients";
 import ShopCards from "./layouts/ShopCards";
 import ProductCards from "./layouts/ProductCards";
 import Content from "./layouts/Content";
+import Features from "./layouts/Features";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <ShopCards />
           <ProductCards />
           <Content />
+          <Features />
         
       
     </div>
