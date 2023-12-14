@@ -45,7 +45,7 @@ function NavBar () {
         <div className="flex justify-between w-[80%]">
         <nav className="text-[#737373] flex gap-[1.5rem]">
           <Link to="/">Home</Link>
-          <Link className="text-[#252B42] font-medium" to="/">
+          <Link className="text-[#252B42] font-medium" to="/productlist">
             Shop
             <FontAwesomeIcon icon={faAngleDown} style={{ marginLeft: '0.6rem' }}/>
           </Link>
