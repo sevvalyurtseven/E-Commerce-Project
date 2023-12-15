@@ -1,8 +1,6 @@
-import { Carousel } from "react-responsive-carousel";
 import curlyGirl from "../Assets/none.png";
-import MainSliderSlider from "../components/MainSlider";
 
-function Header() {
+function HeaderCopy() {
   return (
     <div className="py-12 relative overflow-hidden">
       
@@ -29,4 +27,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default HeaderCopy;
