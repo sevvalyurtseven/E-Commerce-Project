@@ -2,7 +2,7 @@ import girl from "../../Assets/ABOUT/aboutbanner.png";
 
 function HeaderContent() {
   return (
-    <div className="w-[75%] mx-auto flex flex-col justify-start items-start py-28 gap-10">
+    <div className="w-[75%] mx-auto flex flex-col justify-start items-start pt-28 gap-10">
       <h3 className="text-slate-800 text-base font-bold leading-normal tracking-tight">
         ABOUT COMPANY
       </h3>
@@ -26,7 +26,7 @@ function HeaderContent() {
         />
       </div>
 
-      <div className="py-[7rem] gap-8 flex flex-col justify-start items-start">
+      <div className="pt-[7rem] gap-8 flex flex-col justify-start items-start">
         <h5 className="text-red-500 text-sm font-normal leading-tight tracking-wider">
           Problems trying
         </h5>
