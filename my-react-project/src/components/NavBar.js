@@ -51,7 +51,7 @@ function NavBar () {
           </Link>
           <Link to="/about">About</Link>
           <Link to="/">Blog</Link>
-          <Link to="/">Contact</Link>
+          <Link to="/contact">Contact</Link>
           <Link to="/">Pages</Link>
         </nav>
         <div className="text-[#23A6F0] flex gap-[1.7rem]">
