@@ -49,7 +49,7 @@ function NavBar () {
             Shop
             <FontAwesomeIcon icon={faAngleDown} style={{ marginLeft: '0.6rem' }}/>
           </Link>
-          <Link to="/">About</Link>
+          <Link to="/about">About</Link>
           <Link to="/">Blog</Link>
           <Link to="/">Contact</Link>
           <Link to="/">Pages</Link>
