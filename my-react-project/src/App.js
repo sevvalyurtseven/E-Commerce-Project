@@ -3,6 +3,7 @@ import "./App.css";
 import HomePage from "./pages/HomePage";
 import ProductListPage from "./pages/ProductListPage";
 import AboutPage from "./pages/AboutPage";
+import TeamPage from "./pages/TeamPage";
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
         </Route>
         <Route path = "/about" exact>
           <AboutPage/>
+        </Route>
+        <Route path = "/team" exact>
+          <TeamPage/>
         </Route>
       </Switch>
     </div>
