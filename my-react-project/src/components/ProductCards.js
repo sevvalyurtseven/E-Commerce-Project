@@ -8,6 +8,7 @@ import manken7 from "../Assets/mankencards/fixed-height-5.png";
 import manken8 from "../Assets/mankencards/fixed-height-6.png";
 import manken9 from "../Assets/mankencards/product-cover-5-1.png";
 import manken10 from "../Assets/mankencards/fixed-height-7.png";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const ProductCards = () => {
     const productCards = [manken1, manken2, manken3, manken4, manken5, manken6, manken7, manken8, manken9, manken10];
@@ -19,8 +20,9 @@ const ProductCards = () => {
           <h3 className="text-2xl font-bold">BESTSELLER PRODUCTS</h3>
           <p className="text-sm text-[#737373] pb-[3.5rem]">Problems trying to resolve the conflict between</p>
         </div>
-        
+        <Link  to="/product">
         <div className="flex justify-center flex-wrap w-[75rem] gap-8">
+          
           {productCards.map((image, index) => (
             <div key={index} className="flex flex-col items-center gap-4">
               <img src={image} alt={`card ${index}`} />
@@ -33,6 +35,7 @@ const ProductCards = () => {
             </div>
           ))}
         </div>
+        </Link>
         <button className="mt-[6rem] border rounded border-[#23A6F0] text-[#23A6F0] font-bold px-10 py-4">LOAD MORE PRODUCTS</button>
       </div>
     );

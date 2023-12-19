@@ -5,6 +5,7 @@ import ProductListPage from "./pages/ProductListPage";
 import AboutPage from "./pages/AboutPage";
 import TeamPage from "./pages/TeamPage";
 import ContactPage from "./pages/ContactPage";
+import ProductPage from "./pages/ProductPage";
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
         </Route>
         <Route path = "/contact" exact>
           <ContactPage/>
+        </Route>
+        <Route path = "/product" exact>
+          <ProductPage/>
         </Route>
       </Switch>
     </div>

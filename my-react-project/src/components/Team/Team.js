@@ -16,7 +16,7 @@ import member8 from "../../Assets/TEAM/member8.jpg";
 import member9 from "../../Assets/TEAM/member9.jpg";
 import { faFacebook, faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import faceebok from "../../Assets/TEAM/logos_facebook.svg";
-import linkedin from "../../Assets/TEAM/logos_linkedin-icon.svg"
+import linkedin from "../../Assets/TEAM/logos_linkedin-icon.svg";
 
 
 function Team() {
