@@ -10,9 +10,9 @@ import robot from "../Assets/brands/col-md-2-4.png";
 function Clients () {
     const clients =[hooli, lyft, yaprak, stripe, aws, robot];
     return(
-        <div className="flex flex-col sm:flex-row justify-center items-center py-20  gap-12">
+        <div className="sm:py-12 sm:px-44 flex flex-col sm:flex-row sm:justify-between items-center gap-12 pt-16">
             {clients.map((image, index) => (
-                <div kay = {index} > 
+                <div key = {index}> 
                 <img src = {image} />
                 </div>
             ))}
