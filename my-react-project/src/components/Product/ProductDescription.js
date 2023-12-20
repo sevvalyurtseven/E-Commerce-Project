@@ -12,7 +12,7 @@ function ProductDescription (){
           <li className=" text-neutral-500 text-sm font-bold leading-normal tracking-wider" >Description</li>
           <li className=" text-neutral-500 text-sm font-bold leading-normal tracking-wider">Additional Information</li>
           <li className=" text-neutral-500 text-sm font-bold leading-normal tracking-wider">
-            Reviews (0)
+            Reviews <span className="text-[#23856D]">(0)</span>
           </li>
         </ul>
         <img src ={line} className="pb-10"/>
