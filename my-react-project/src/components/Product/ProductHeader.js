@@ -12,10 +12,11 @@ import { faStar as emptyStar } from "@fortawesome/free-regular-svg-icons";
 import sarikoltuk from "../../Assets/PRODUCT/sarikoltuk.png";
 import kucuk1 from "../../Assets/PRODUCT/kucuk1.png";
 import kucuk2 from "../../Assets/PRODUCT/kucuk2.png";
+import Slider from "../Slider";
 
 function ProductHeader() {
   return (
-    <div className="bg-[#FAFAFA] px-44">
+    <div className="bg-[#FAFAFA] px-44 pb-28">
       <div className="flex items-center justify-start gap-3 py-10">
         <h4 className=" text-slate-800 text-sm font-bold leading-normal tracking-wider">
           Home
@@ -28,11 +29,8 @@ function ProductHeader() {
           Shop
         </h4>
       </div>
-      <div className="flex justify-start">
-        <div className="flex">
-          <img src={sarikoltuk} />
-        </div>
-
+      <div className="flex justify-start items-start flex-wrap md:flex-nowrap">
+        <Slider/>
         <div className="flex-flex-col  px-16">
           <h3 className="text-slate-800 text-xl font-medium leading-[30px] tracking-wider">
             Floating Phone
@@ -93,10 +91,6 @@ function ProductHeader() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="flex gap-4 py-4">
-        <img src={kucuk1} />
-        <img src={kucuk2} />
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ function ProductPage(){
     return (
         <div>
             <NavBar/>
+           
             <ProductHeader/>
             <ProductDescription/>
             <BestSellerProduct/>

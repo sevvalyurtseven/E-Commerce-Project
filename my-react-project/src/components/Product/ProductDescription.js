@@ -5,7 +5,7 @@ import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 function ProductDescription (){
     return (
-        <div className="flex flex-col  py-14 px-40">
+        <div className="flex flex-col  py-14 ">
 
             <ul className="flex  justify-center items-center gap-10 pb-10">
 
@@ -17,7 +17,7 @@ function ProductDescription (){
         </ul>
         <img src ={line} className="pb-10"/>
         
-        <div className="flex justify-start">
+        <div className="flex justify-center flex-wrap gap-10">
             <div className="flex">
             <img src = {pembeSandalye} />
             </div>
