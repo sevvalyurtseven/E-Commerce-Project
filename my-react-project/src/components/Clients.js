@@ -8,14 +8,14 @@ import robot from "../Assets/brands/col-md-2-4.png";
 
 
 function Clients () {
+    const clients =[hooli, lyft, yaprak, stripe, aws, robot];
     return(
-        <div className="flex justify-center items-center gap-[2rem] ml-[6rem] mr-[11rem] py-[4rem] pl-[1rem]">
-            <img src={hooli}/>
-            <img src={lyft}/>
-            <img src={yaprak}/>
-            <img src={stripe}/>
-            <img src={aws}/>
-            <img src={robot}/>
+        <div className="flex flex-col sm:flex-row justify-center items-center py-20  gap-12">
+            {clients.map((image, index) => (
+                <div kay = {index} > 
+                <img src = {image} />
+                </div>
+            ))}
         </div>
     )
 }
