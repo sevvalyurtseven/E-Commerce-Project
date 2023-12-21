@@ -2,10 +2,9 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Header from "../layouts/Header";
-import HeaderCopy from "../layouts/HeaderCopy";
+import HomeHeader from "./HomeHeader";
 
-const MainSlider = () => {
+const HomeSlider = () => {
   const settings = {
     dots: false,
     infinite: true,
@@ -19,10 +18,10 @@ const MainSlider = () => {
     <div className="mx-auto">
       <Slider {...settings}>
         <div>
-          <Header />
+          <HomeHeader />
         </div>
         <div>
-          <HeaderCopy />
+          <HomeHeader />
         </div>
       </Slider>
 
@@ -49,7 +48,7 @@ const MainSlider = () => {
   );
 };
 
-export default MainSlider;
+export default HomeSlider;
 
 
 
