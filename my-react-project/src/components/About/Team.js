@@ -14,19 +14,19 @@ function Team() {
   const teamCards = [team1, team2, team3];
   return (
     <div>
-      <div className=" flex justify-center py-24">
+      <div className=" flex justify-center py-24 ">
         <div className="flex flex-col items-center gap-8">
           <div className="text-slate-800 text-4xl font-bold leading-[50px] tracking-wider">
             <Link to="/team">Meet Our Team</Link>
           </div>
 
-          <p className="text-center text-neutral-500 text-sm font-normal leading-tight tracking-wider">
-            Problems trying to resolve the conflict between <br /> the two major
+          <p className="w-3/5 sm:w-full text-center text-neutral-500 text-sm font-normal leading-tight tracking-wider">
+            Problems trying to resolve the conflict between <br className="hidden sm:block" /> the two major
             realms of Classical physics: Newtonian mechanics
           </p>
         </div>
       </div>
-      <div className="flex justify-center gap-8">
+      <div className="flex justify-center sm:gap-8 flex-wrap sm:flex-nowrap">
         {teamCards.map((image, index) => (
           <div key={index} className="flex flex-col items-center gap-6">
             <img src={image} alt={`card ${index}`} />

@@ -4,7 +4,7 @@ function Work() {
   return (
     <div className="flex justify-center bg-[#2A7CC7]">
       <div className="flex w-[75%]">
-        <div className="flex flex-col justify-center  gap-8 pl-40">
+        <div className="flex flex-col justify-center gap-8 sm:pl-40 pl-0 py-20 sm:py-0 items-center sm:items-start text-center sm:text-start">
           <h4 className="text-white text-base font-bold leading-normal tracking-wider">
             WORK WITH US
           </h4>
@@ -23,7 +23,7 @@ function Work() {
         </div>
       </div>
       
-      <img src={blondeGirl} />
+      <img src={blondeGirl} className="hidden sm:block"/>
     </div>
   );
 }

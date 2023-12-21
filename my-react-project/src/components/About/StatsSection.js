@@ -5,7 +5,7 @@ import video from "../../Assets/ABOUT/video.png";
 function StatsSection() {
   return (
     <div>
-      <div className="w-[75%] mx-auto flex justify-start items-center py-28 gap-[9rem]">
+      <div className="w-[75%] mx-auto flex sm:justify-start justify-center items-center py-28 gap-[9rem] flex-wrap sm:flex-nowrap">
         <div>
           <h1 className="text-center text-slate-800 text-[58px] font-bold leading-[80px] tracking-tight">
             15K
