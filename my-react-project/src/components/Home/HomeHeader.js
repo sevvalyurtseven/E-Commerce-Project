@@ -2,7 +2,7 @@ import curlyGirl from "../../Assets/none.png";
 
 function HomeHeader() {
   return (
-    <div className="py-10 pl-12 pr-28  ">
+    <div className="sm:py-10 sm:pl-12 sm:pr-28 py-10 px-12 ">
       <div className="flex flex-col sm:flex-row bg-gradient-to-r from-[#96E9FB] to-[#ABECD6] rounded-3xl pt-4 ">
         <div className="flex flex-col p-8 gap-5 items-center sm:items-start sm:justify-center sm:pl-20 sm:gap-8">
         <h5 className="text-sky-600 text-base font-bold leading-normal tracking-wider">SUMMER 2020</h5>
