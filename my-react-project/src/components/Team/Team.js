@@ -22,11 +22,11 @@ import linkedin from "../../Assets/TEAM/logos_linkedin-icon.svg";
 function Team() {
     const memberCards = [member1, member2, member3, member4, member5, member6, member7, member8, member9];
   return (
-    <div className="flex flex-col py-20 gap-6">
+    <div className="flex flex-col py-20 gap-6 justify-center items-center px-4 sm:px-0">
       <h5 className="text-center text-neutral-500 text-base font-bold leading-normal tracking-wider">
         WHAT WE DO
       </h5>
-      <h2 className="text-center text-slate-800 text-6xl font-bold leading-[80px] tracking-wider">
+      <h2 className="text-center text-slate-800 sm:text-6xl text-5xl font-bold leading-[80px] tracking-wider">
         Innovation tailored for you
       </h2>
       <div className="flex items-center justify-center gap-4">
@@ -41,21 +41,21 @@ function Team() {
           Team
         </h5>
       </div>
-      <div className="flex gap-2 pt-10">
+      <div className="flex flex-col sm:flex-row gap-2 pt-10 flex-wrap sm:flex-nowrap">
         <img src={team1} />
 
-        <div className="flex flex-col gap-2">
+        <div className="flex sm:flex-col flex-row gap-2 w-[49%] sm:w-full">
           <img src={team2} />
           <img src={team3} />
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex sm:flex-col flex-row gap-2 w-[49%] sm:w-full ">
           <img src={team4} />
           <img src={team5} />
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center pt-20">
-        <h1 className="text-slate-800 text-5xl font-bold leading-[50px] tracking-wider">Meet Our Team</h1>
-      <div className="flex justify-center flex-wrap gap-8 p-20">
+      <div className="flex flex-col items-center justify-center sm:pt-20 pt-10">
+        <h1 className="text-slate-800 text-5xl font-bold leading-[50px] tracking-wider text-center">Meet Our <br className="sm:hidden block"/>Team</h1>
+      <div className="flex justify-center flex-wrap sm:gap-8 gap-0 sm:p-20 p-8">
         {memberCards.map((image, index) => (
           <div key={index} className="flex flex-col items-center gap-6">
             <img src={image} alt={`card ${index}`} />
@@ -66,7 +66,7 @@ function Team() {
               <h4 className="text-center text-neutral-500 text-sm font-bold  leading-normal tracking-wider">
                 Profession
               </h4>
-              <div className="flex items-center gap-5 text-[#23A6F0] text-lg pb-28">
+              <div className="flex items-center gap-5 text-[#23A6F0] text-3xl pb-28">
                 <FontAwesomeIcon icon={faFacebook} />
                 <FontAwesomeIcon icon={faInstagram} />
                 <FontAwesomeIcon icon={faTwitter} />
@@ -77,8 +77,8 @@ function Team() {
       </div>
       </div>
       <div className="flex flex-col items-center justify-center gap-10">
-      <h1 className=" text-slate-800 text-[40px] font-bold leading-[50px] tracking-wider">Start your 14 days free trial</h1>
-      <p className="text-center text-neutral-500 text-sm font-normal leading-tight tracking-wider">Met minim Mollie non desert Alamo est sit cliquey dolor <br/> 
+      <h1 className=" text-slate-800 text-[40px] font-bold leading-[50px] tracking-wider text-center">Start your 14 days free trial</h1>
+      <p className="text-center text-neutral-500 text-base font-normal leading-tight tracking-wider w-4/5">Met minim Mollie non desert Alamo est sit cliquey dolor <br className="hidden sm:block"/> 
 do met sent. RELIT official consequent.</p>
 <button className="text-center text-white text-sm font-bold leading-snug tracking-wider border rounded-md border-solid bg-[#23A6F0] px-12 py-5">Try it free now</button></div>
 <div className="flex items-center justify-center gap-10 pt-10">
