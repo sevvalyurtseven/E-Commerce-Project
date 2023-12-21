@@ -9,7 +9,8 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <div className="w-full flex flex-col pt-10">
-      <div className="bg-[#FAFAFA] flex sm:flex-row flex-col sm:justify-between justify-start px-20 py-10 sm:items-center items-start">
+      <div className="bg-[#FAFAFA]   px-20 py-10">
+        <div className="sm:px-36 flex sm:flex-row flex-col sm:justify-between justify-start sm:items-center items-start">
         <h1 className="text-slate-800 text-2xl font-bold leading-loose tracking-wider">
           Bandage
         </h1>
@@ -17,7 +18,7 @@ function Footer() {
           <FontAwesomeIcon icon={faFacebook} />
           <FontAwesomeIcon icon={faInstagram} />
           <FontAwesomeIcon icon={faTwitter} />
-        </div>
+        </div></div>
       </div>
       <div className="flex justify-center py-10">
         <div className="flex sm:flex-row flex-col justify-between gap-14">
