@@ -27,19 +27,19 @@ function HeaderContent() {
         </div>
       </div>
 
-      <div className="pt-[7rem] gap-8 flex flex-col sm:justify-start justify-center sm:items-start items-center">
+      <div className="pt-[7rem] sm:pr-44 pr-0 gap-8 flex flex-col sm:justify-start justify-center sm:items-start items-center">
         <h5 className="text-red-500 text-sm font-normal leading-tight tracking-wider">
           Problems trying
         </h5>
         <div className="flex flex-wrap sm:flex-nowrap sm:justify-between justify-center  gap-[6rem] sm:w-full w-4/5">
-          <h2 className="text-slate-800 text-2xl font-bold leading-7 tracking-tight sm:text-start text-center">
-            Met minim Mollie non desert <br /> Alamo est sit cliquey dolor do{" "}
-            <br /> met sent.
+          <h2 className="text-slate-800 text-2xl font-bold leading-7 tracking-tight sm:text-start text-center sm:w-full w-4/5">
+            Met minim Mollie non desert <br className="hidden sm:block"/> Alamo est sit cliquey dolor do{" "}
+            <br className="hidden sm:block"/> met sent.
           </h2>
 
           <h5 className="text-neutral-500 text-sm font-normal leading-tight tracking-wider">
             Problems trying to resolve the conflict between the two major realms
-            of <br /> Classical physics: Newtonian mechanics
+            of <br className="hidden sm:block"/> Classical physics: Newtonian mechanics
           </h5>
         </div>
       </div>
