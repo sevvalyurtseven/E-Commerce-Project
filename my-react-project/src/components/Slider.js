@@ -74,13 +74,13 @@ const Slider = () => {
             className="w-16 h-16 text-white pr-5" />
         </div>
         <div
-          className="flex overflow-hidden  md:w-[600px] md:h-[500px] gap-5 "
+          className="flex overflow-hidden  w-96 h-60 md:w-[600px] md:h-[500px] gap-5"
           ref={container1Ref}
         >
           {arr.map((image, i) => (
             <div
               key={i}
-              className={`shrink-0  md:w-[600px] md:h-[500px] ${
+              className={`shrink-0  w-96 h-60 md:w-[600px] md:h-[500px] ${
                 activeId == i ? "active" : ""
               }`}
             >
@@ -90,13 +90,13 @@ const Slider = () => {
         </div>
       </section>
       <section
-        className="w-[250px] md:w-[600px] md:h-20 flex gap-5 overflow-x-scroll "
+        className="w-96 h-16 md:w-[600px] md:h-32 flex gap-5 overflow-x-scroll "
         ref={container2Ref}
       >
         {arr.map((image, i) => (
           <div
             key={i}
-            className={`opacity-50 shrink-0 md:w-32 ${
+            className={`opacity-50 shrink-0 md:w-52 ${
               activeId == i ? "active" : ""
             }`}
             onClick={() => handleClick(i)}

@@ -7,7 +7,7 @@ function ProductDescription (){
     return (
         <div className="flex flex-col  py-14 ">
 
-            <ul className="flex  justify-center items-center gap-10 pb-10">
+            <ul className="flex  justify-center items-center sm:gap-10 gap-4 pb-10">
 
           <li className=" text-neutral-500 text-sm font-bold leading-normal tracking-wider" >Description</li>
           <li className=" text-neutral-500 text-sm font-bold leading-normal tracking-wider">Additional Information</li>

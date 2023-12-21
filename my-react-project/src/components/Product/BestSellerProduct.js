@@ -11,12 +11,12 @@ import img8 from "../../Assets/PRODUCT/product8.png";
 function BestSellerProduct() {
   const productCards = [img1, img2, img3, img4, img5, img6, img7, img8];
   return (
-    <div className="px-44 py-8 bg-[#FAFAFA]">
-      <h1 className="text-slate-800 text-2xl font-bold leading-loose tracking-wider">
+    <div className="sm:px-44  py-8 bg-[#FAFAFA]">
+      <h1 className="text-slate-800 text-2xl font-bold leading-loose tracking-wider text-center sm:text-start">
         BESTSELLER PRODUCTS
       </h1>
       <img src={line} className="py-5" />
-      <div className="flex gap-6 flex-wrap">
+      <div className="flex gap-6 flex-wrap justify-center sm:justify-normal items-center pb-10">
         {productCards.map((image, index) => (
           <div
             key={index}
