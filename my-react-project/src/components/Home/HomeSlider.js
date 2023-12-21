@@ -41,7 +41,7 @@ const HomeSlider = () => {
         }
 
         .slick-next {
-          right: 140px;
+          right: 80px;
         }
       `}</style>
     </div>

@@ -2,36 +2,37 @@ import girl from "../../Assets/ABOUT/aboutbanner.png";
 
 function HeaderContent() {
   return (
-    <div className="w-[75%] mx-auto flex flex-col justify-start items-start pt-28 gap-10">
-      <h3 className="text-slate-800 text-base font-bold leading-normal tracking-tight">
-        ABOUT COMPANY
-      </h3>
-      <h1 className="text-slate-800 text-5xl font-bold leading-20 tracking-tight">
-        ABOUT US
-      </h1>
-      <p className="text-neutral-500 text-xl font-normal leading-7 tracking-tight">
-        We know how large objects will act, <br />
-        but things on a small scale
-      </p>
+    <div className="flex flex-col items-center">
+      <div className="flex flex-col sm:flex-row flex-wrap sm:flex-nowrap sm:justify-start justify-center sm:items-start items-center  sm:gap-44 gap-10">
+        <div className="flex flex-col sm:items-start items-center gap-10 py-44">
+          <h3 className="text-slate-800 text-base font-bold leading-normal tracking-wider hidden sm:block">
+            ABOUT COMPANY
+          </h3>
+          <h1 className=" text-slate-800 text-5xl font-bold leading-20 tracking-wider">
+            ABOUT US
+          </h1>
+          <p className="text-neutral-500 sm:text-xl text-2xl font-normal leading-7 tracking-wider text-center sm:text-start">
+            We know how large objects will act, <br />
+            but things on a small scale
+          </p>
 
-      <div className="px-7 py-3 bg-[#23A6F0] rounded-5 flex-col items-center gap-3 border-0 border-solid rounded">
-        <button className="text-white text-sm font-bold leading-snug tracking-tight">
-          Get Quote Now
-        </button>
-      </div>
-      <div className="flex w-[57%] h-full relative">
-        <img
-          src={girl}
-          className="absolute bottom-[-10rem] z-40 right-[-32rem]"
-        />
+          <div className="sm:px-7 px-10 py-3 bg-[#23A6F0] rounded-5 flex-col items-center gap-3 border-0 border-solid rounded">
+            <button className="text-white text-sm font-bold leading-snug tracking-tight">
+              Get Quote Now
+            </button>
+          </div>
+        </div>
+        <div className="flex  h-full ">
+          <img src={girl} className="flex object-cover" />
+        </div>
       </div>
 
-      <div className="pt-[7rem] gap-8 flex flex-col justify-start items-start">
+      <div className="pt-[7rem] gap-8 flex flex-col sm:justify-start justify-center sm:items-start items-center">
         <h5 className="text-red-500 text-sm font-normal leading-tight tracking-wider">
           Problems trying
         </h5>
-        <div className="flex  justify-between  gap-[6rem]">
-          <h2 className="text-slate-800 text-2xl font-bold leading-7 tracking-tight">
+        <div className="flex flex-wrap sm:flex-nowrap sm:justify-between justify-center  gap-[6rem] sm:w-full w-4/5">
+          <h2 className="text-slate-800 text-2xl font-bold leading-7 tracking-tight sm:text-start text-center">
             Met minim Mollie non desert <br /> Alamo est sit cliquey dolor do{" "}
             <br /> met sent.
           </h2>
