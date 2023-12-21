@@ -11,8 +11,8 @@ function HeaderContent() {
           <h1 className=" text-slate-800 text-5xl font-bold leading-20 tracking-wider">
             ABOUT US
           </h1>
-          <p className="text-neutral-500 sm:text-xl text-2xl font-normal leading-7 tracking-wider text-center sm:text-start">
-            We know how large objects will act, <br />
+          <p className="text-neutral-500 text-2xl font-normal leading-7 tracking-wider text-center sm:text-start sm:w-full w-4/5">
+            We know how large objects will act, <br className="hidden sm:block"/>
             but things on a small scale
           </p>
 
