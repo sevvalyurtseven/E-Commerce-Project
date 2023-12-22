@@ -27,7 +27,7 @@ function Post() {
         <h2 className="text-[2.5rem]">Featured Posts</h2>
       </div>
 
-      <div className="flex gap-10">
+      <div className="flex gap-10 flex-wrap">
         {postPictures.map((image, index) => (
           <div key={index} className="flex">
             <img src={image} alt={`post ${index}`} />

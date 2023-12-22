@@ -4,7 +4,7 @@ import HomeSlider from "../components/Home/HomeSlider";
 import NavBar from "../components/NavBar";
 import ProductCards from "../components/ProductCards";
 import Content from "../layouts/Content";
-import Features from "../layouts/Features";
+import Features from "../components/Home/Features";
 import Post from "../layouts/Posts";
 import ShopCards from "../layouts/ShopCards";
 
