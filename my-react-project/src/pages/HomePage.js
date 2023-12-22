@@ -7,6 +7,7 @@ import Content from "../components/Home/Content";
 import Features from "../components/Home/Features";
 import Post from "../layouts/Posts";
 import ShopCards from "../components/Home/ShopCards";
+import BestSellerSection from "../components/Home/BestSellerSection";
 
 function HomePage() {
   return (
@@ -15,7 +16,7 @@ function HomePage() {
       <HomeSlider />
       <Clients />
       <ShopCards />
-      <ProductCards />
+      <BestSellerSection />
       <Content />
       <Features />
       <Post />

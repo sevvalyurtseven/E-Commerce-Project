@@ -11,35 +11,39 @@ import manken10 from "../Assets/mankencards/fixed-height-7.png";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const ProductCards = () => {
-    const productCards = [manken1, manken2, manken3, manken4, manken5, manken6, manken7, manken8, manken9, manken10];
-  
-    return (
-      <div className="w-full flex flex-col justify-center items-center">
-        <div className="flex flex-col justify-center items-center gap-3">
-          <h4 className="text-xl text-[#737373] font-medium">Featured Products</h4>
-          <h3 className="text-2xl font-bold">BESTSELLER PRODUCTS</h3>
-          <p className="text-sm text-[#737373] pb-[3.5rem]">Problems trying to resolve the conflict between</p>
-        </div>
-        <Link  to="/product">
-        <div className="flex justify-center flex-wrap gap-10">
-          
-          
-          {productCards.map((image, index) => (
-            <div key={index} className="flex flex-col items-center gap-4 ">
-              <img src={image} alt={`card ${index}`} />
-              <h5 className="text-black text-base font-bold tracking-wider leading-normal pt-[0.8rem]">Graphic Design</h5>
-              <p className="text-[#737373] text-sm font-bold tracking-wider">English Department</p>
-              <div className="flex justify-center gap-2">
-                <h5 className="text-[#BDBDBD] font-bold text-base ">$16.48</h5>
-                <h5 className="text-[#23856D] font-bold text-base">$6.48</h5>
-              </div>
+  const productCards = [
+    manken1,
+    manken2,
+    manken3,
+    manken4,
+    manken5,
+    manken6,
+    manken7,
+    manken8,
+    manken9,
+    manken10,
+  ];
+
+  return (
+    <div className="w-full flex flex-col items-center justify-center py-10">
+      <Link to="/product">
+        <div className="flex items-center justify-center gap-8 flex-wrap px-20">
+        {productCards.map((image, index) => (
+          <div key={index} className="flex flex-col items-center   gap-5 py-6">
+            <img src={image} alt={`card ${index}`} />
+            <h5 className="text-slate-800 text-base font-bold leading-normal tracking-wider">Graphic Design</h5>
+            <p className="text-center text-neutral-500 text-sm font-bold leading-normal tracking-wider">English Department</p>
+            <div className="flex  justify-center items-center gap-2">
+              <h5 className="text-center text-stone-300 text-base font-bold leading-normal tracking-wider">$16.48</h5>
+              <h5 className="text-center text-teal-700 text-base font-bold leading-normal tracking-wider">$6.48</h5>
             </div>
-          ))}
+          </div>
+        ))} 
         </div>
-        </Link>
-        <button className="mt-[6rem] border rounded border-[#23A6F0] text-[#23A6F0] font-bold px-10 py-4">LOAD MORE PRODUCTS</button>
-      </div>
-    );
-  }
-  
-  export default ProductCards;
+      </Link>
+    </div>
+   
+  );
+};
+
+export default ProductCards;
