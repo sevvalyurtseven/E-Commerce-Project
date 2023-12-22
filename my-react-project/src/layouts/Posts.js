@@ -29,8 +29,10 @@ function Post() {
 
       <div className="flex gap-10 flex-wrap">
         {postPictures.map((image, index) => (
-          <div key={index} className="flex">
+          <div key={index} className="flex flex-wrap">
+
             <img src={image} alt={`post ${index}`} />
+            <div className="flex flex-wrap">
             <div className="relative">
               <div className="absolute right-[9rem] top-4 bg-red-500 rounded-[3px] shadow p-[0.1rem] px-2">
                 <h2 className="text-white text-sm font-bold leading-normal tracking-wider">
@@ -113,7 +115,7 @@ function Post() {
                 <FontAwesomeIcon icon={faAngleRight} />
               </button>
             </div>
-          </div>
+          </div></div>
         ))}
       </div>
     </div>

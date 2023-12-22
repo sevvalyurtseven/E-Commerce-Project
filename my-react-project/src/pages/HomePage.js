@@ -3,10 +3,10 @@ import Footer from "../components/Footer";
 import HomeSlider from "../components/Home/HomeSlider";
 import NavBar from "../components/NavBar";
 import ProductCards from "../components/ProductCards";
-import Content from "../layouts/Content";
+import Content from "../components/Home/Content";
 import Features from "../components/Home/Features";
 import Post from "../layouts/Posts";
-import ShopCards from "../layouts/ShopCards";
+import ShopCards from "../components/Home/ShopCards";
 
 function HomePage() {
   return (

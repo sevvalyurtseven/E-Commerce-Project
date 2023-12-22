@@ -14,17 +14,18 @@ const ProductCards = () => {
     const productCards = [manken1, manken2, manken3, manken4, manken5, manken6, manken7, manken8, manken9, manken10];
   
     return (
-      <div className="py-[5rem] flex flex-col items-center">
-        <div className="flex flex-col items-center gap-3">
+      <div className="w-full flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center gap-3">
           <h4 className="text-xl text-[#737373] font-medium">Featured Products</h4>
           <h3 className="text-2xl font-bold">BESTSELLER PRODUCTS</h3>
           <p className="text-sm text-[#737373] pb-[3.5rem]">Problems trying to resolve the conflict between</p>
         </div>
         <Link  to="/product">
-        <div className="flex justify-center flex-wrap w-[75rem] gap-8">
+        <div className="flex justify-center flex-wrap gap-10">
+          
           
           {productCards.map((image, index) => (
-            <div key={index} className="flex flex-col items-center gap-4">
+            <div key={index} className="flex flex-col items-center gap-4 ">
               <img src={image} alt={`card ${index}`} />
               <h5 className="text-black text-base font-bold tracking-wider leading-normal pt-[0.8rem]">Graphic Design</h5>
               <p className="text-[#737373] text-sm font-bold tracking-wider">English Department</p>
