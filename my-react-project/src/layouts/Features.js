@@ -23,16 +23,16 @@ function Features() {
 
   return (
    <div className="w-full">
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center pt-12">
     <h4 className="text-center text-neutral-500 text-xl font-normal leading-[30px] tracking-wider">Featured Products</h4>
     <h2 className="text-center text-slate-800 text-2xl font-bold  leading-loose tracking-wider">THE BEST SERVICES</h2>
     <p className="text-center text-neutral-500 text-sm font-normal font-['Montserrat'] leading-tight tracking-tight">Problems trying to resolve the conflict between </p>
     </div>
     
-    <div className="flex justify-center items-center py-32 px-20">
+    <div className="flex flex-wrap sm:flex-nowrap items-center pt-28 px-20">
         {fontAwesomeIcons.map((icon, index) => (
          
-            <div key={index} className="flex flex-col justify-center mx-auto gap-4 items-center w-1/5">
+            <div key={index} className="flex flex-col justify-center mx-auto gap-4 items-center w-full sm:w-1/5 pb-28 ">
               
               <FontAwesomeIcon
                 icon={icon}
