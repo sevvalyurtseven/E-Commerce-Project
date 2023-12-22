@@ -22,38 +22,31 @@ function Features() {
   ];
 
   return (
-    <div className="w-[75%] py-20  gap-[5rem] flex-col justify-start items-center  inline-flex">
-      <div className="text-center ml-[20rem]">
-        <h3 className="text-[#737373] text-xl font-normal leading-[30px] tracking-wider">
-          Featured Products
-        </h3>
-        <h2 className="text-[#252B42] text-2xl font-bold leading-loose tracking-wider">
-          THE BEST SERVICES
-        </h2>
-        <p className="text-[#737373] text-sm font-normal leading-tight tracking-wider">
-          Problems trying to resolve the conflict between
-        </p>
-      </div>
-
-      <div className="flex justify-center items-start gap-[3rem] ml-[20rem]">
+   <div className="w-full">
+    <div className="flex flex-col justify-center items-center">
+    <h4 className="text-center text-neutral-500 text-xl font-normal leading-[30px] tracking-wider">Featured Products</h4>
+    <h2 className="text-center text-slate-800 text-2xl font-bold  leading-loose tracking-wider">THE BEST SERVICES</h2>
+    <p className="text-center text-neutral-500 text-sm font-normal font-['Montserrat'] leading-tight tracking-tight">Problems trying to resolve the conflict between </p>
+    </div>
+    
+    <div className="flex justify-center items-center py-32 px-20">
         {fontAwesomeIcons.map((icon, index) => (
-          <div
-            key={index}
-            className="w-[310px] flex-col items-center inline-flex"
-          >
-            <div className="px-10 py-7 flex-col items-center gap-5 flex">
+         
+            <div key={index} className="flex flex-col justify-center mx-auto gap-4 items-center w-1/5">
+              
               <FontAwesomeIcon
                 icon={icon}
                 className="text-7xl text-[#23A6F0]"
               />
-              <h2 className="text-[#252B42]  text-2xl font-bold leading-loose tracking-wider">
+              <h2 className="text-center text-slate-800 text-2xl font-bold leading-loose tracking-wider">
                 {featureItems[index].title}
               </h2>
-              <p className="text-[#737373] text-center text-sm font-normal leading-tight tracking-wider">
+              <p className="text-center text-neutral-500 text-sm font-normal leading-tight tracking-wider">
                 {featureItems[index].description}
               </p>
             </div>
-          </div>
+          
+          
         ))}
       </div>
     </div>
