@@ -1,4 +1,4 @@
-import ProductCards from "../ProductCards";
+import ProductCards from "./ProductCards";
 
 function BestSellerSection(){
     return(

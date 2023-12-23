@@ -1,13 +1,13 @@
-import manken1 from "../Assets/mankencards/fixed-height-4.png";
-import manken2 from "../Assets/mankencards/fixed-height-1.png";
-import manken3 from "../Assets/mankencards/fixed-height-2.png";
-import manken4 from "../Assets/mankencards/fixed-height-3.png";
-import manken5 from "../Assets/mankencards/product-cover-5.png";
-import manken6 from "../Assets/mankencards/fixed-height.png";
-import manken7 from "../Assets/mankencards/fixed-height-5.png";
-import manken8 from "../Assets/mankencards/fixed-height-6.png";
-import manken9 from "../Assets/mankencards/product-cover-5-1.png";
-import manken10 from "../Assets/mankencards/fixed-height-7.png";
+import manken1 from "../../Assets/mankencards/fixed-height-4.png";
+import manken2 from "../../Assets/mankencards/fixed-height-1.png";
+import manken3 from "../../Assets/mankencards/fixed-height-2.png";
+import manken4 from "../../Assets/mankencards/fixed-height-3.png";
+import manken5 from "../../Assets/mankencards/product-cover-5.png";
+import manken6 from "../../Assets/mankencards/fixed-height.png";
+import manken7 from "../../Assets/mankencards/fixed-height-5.png";
+import manken8 from "../../Assets/mankencards/fixed-height-6.png";
+import manken9 from "../../Assets/mankencards/product-cover-5-1.png";
+import manken10 from "../../Assets/mankencards/fixed-height-7.png";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const ProductCards = () => {
