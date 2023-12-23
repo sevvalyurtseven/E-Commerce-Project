@@ -44,23 +44,23 @@ function NavBar() {
       </div>
 
       <div className="flex flex-col sm:flex-row items-center justify-between pb-4 pt-4 px-14">
-        <div className="flex items-center">
-          <h2 className="text-slate-800 text-2xl font-bold leading-loose tracking-wider">
+        <div className="flex items-center ">
+          <h2 className="text-slate-800 md:text-2xl text-base font-bold leading-loose tracking-wider">
             Bandage
           </h2>
         </div>
-        <nav className="flex flex-col sm:flex-row items-center  gap-4 text-center text-neutral-500 font-bold leading-normal tracking-wider">
+        <nav className="flex flex-col sm:flex-row items-center  gap-4 text-center text-neutral-500 font-normal sm:font-bold leading-normal tracking-wider pt-10 sm:pt-0">
           <Link to="/">Home</Link>
           <Link className="text-[#252B42] font-medium" to="/productlist">
             Shop
-            <FontAwesomeIcon icon={faAngleDown} className="pl-3" />
+            <FontAwesomeIcon icon={faAngleDown} className="pl-3 hidden xl:block" />
           </Link>
           <Link to="/about">About</Link>
           <Link to="/">Blog</Link>
           <Link to="/contact">Contact</Link>
           <Link to="/">Pages</Link>
         </nav>
-        <div className=" text-sky-500  font-bold leading-normal tracking-tight xl:flex hidden items-center gap-10 ">
+        <div className=" text-sky-500  font-bold leading-normal tracking-tight flex flex-col xl:flex-row items-center xl:gap-10 gap-5 pt-6 md:pt-0  ">
           <Link to="/">
             <FontAwesomeIcon icon={faUser} />
             <span> Login</span>
