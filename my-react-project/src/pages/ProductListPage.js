@@ -1,8 +1,8 @@
 import Clients from "../components/Clients";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
-import ProductPageCard from "../components/ProductPageCard";
-import Shop from "../layouts/Shop";
+import ProductPageCard from "../components/Shop/ProductPageCard";
+import Shop from "../components/Shop/Shop";
 
 function ProductListPage() {
     return (

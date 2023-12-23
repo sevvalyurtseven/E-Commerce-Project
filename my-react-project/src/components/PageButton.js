@@ -4,7 +4,7 @@ const PageButton = () => {
     };
   
     return (
-      <div>
+      <div className="flex flex-nowrap">
         <button
           className="text-base tracking-wider py-6 px-6 border-solid border-[1.346px] border-[#E8E8E8]  text-[#BDBDBD] bg-[#F3F3F3] shadow-[#BDBDBD] font-bold"
           onClick={clickHandler}
