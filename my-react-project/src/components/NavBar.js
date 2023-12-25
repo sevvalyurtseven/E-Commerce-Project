@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAngleDown,
+  faBars,
   faCartShopping,
   faMagnifyingGlass,
   faPhone,
@@ -44,14 +45,16 @@ function NavBar() {
       </div>
 
       <div className="flex flex-col sm:flex-row items-center justify-between pb-4 pt-4 px-14">
-        <div className="flex items-center ">
+        <div className="flex items-center justify-between self-stretch">
           <h2 className="text-slate-800 md:text-2xl text-base font-bold leading-loose tracking-wider">
             Bandage
           </h2>
+          <FontAwesomeIcon icon = {faBars} className="sm:hidden block" />
+          
         </div>
         <nav className="flex flex-col sm:flex-row items-center  gap-4 text-center text-neutral-500 font-normal sm:font-bold leading-normal tracking-wider pt-10 sm:pt-0">
           <Link to="/">Home</Link>
-          <Link className="text-[#252B42] font-medium" to="/productlist">
+          <Link className="text-[#252B42] font-medium flex items-center" to="/productlist">
             Shop
             <FontAwesomeIcon icon={faAngleDown} className="pl-3 hidden xl:block" />
           </Link>
