@@ -6,6 +6,7 @@ import AboutPage from "./pages/AboutPage";
 import TeamPage from "./pages/TeamPage";
 import ContactPage from "./pages/ContactPage";
 import ProductPage from "./pages/ProductPage";
+import SignUp from "./pages/SignUp";
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
         </Route>
         <Route path = "/product" exact>
           <ProductPage/>
+        </Route>
+        <Route path = "/signup" exact>
+          <SignUp/>
         </Route>
       </Switch>
     </div>
