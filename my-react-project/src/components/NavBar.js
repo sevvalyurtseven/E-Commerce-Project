@@ -64,7 +64,7 @@ function NavBar() {
           <Link to="/">Pages</Link>
         </nav>
         <div className=" text-sky-500  font-bold leading-normal tracking-tight flex flex-col xl:flex-row items-center xl:gap-10 gap-5 pt-6 md:pt-0  ">
-          <Link to="/">
+          <Link to="/signup">
             <FontAwesomeIcon icon={faUser} />
             <span> Login</span>
             <span> /</span>
