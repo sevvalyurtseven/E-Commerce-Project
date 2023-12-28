@@ -63,13 +63,15 @@ function NavBar() {
           <Link to="/contact">Contact</Link>
           <Link to="/">Pages</Link>
         </nav>
-        <div className=" text-sky-500  font-bold leading-normal tracking-tight flex flex-col xl:flex-row items-center xl:gap-10 gap-5 pt-6 md:pt-0  ">
+        <div className=" text-sky-500  font-bold leading-normal tracking-wider flex  xl:flex-row items-center xl:gap-4 gap-5 pt-6 md:pt-0  ">
+          <FontAwesomeIcon icon={faUser} />
+          <Link to="/login"><span> Login</span></Link>
+          <span> /</span>
           <Link to="/signup">
-            <FontAwesomeIcon icon={faUser} />
-            <span> Login</span>
-            <span> /</span>
             <span> Register</span>
-          </Link>
+            
+          </Link></div>
+          <div className=" text-sky-500  font-bold leading-normal tracking-tight flex flex-col xl:flex-row items-center xl:gap-14 gap-5 pt-6 md:pt-0  ">
           <Link to="/">
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </Link>
