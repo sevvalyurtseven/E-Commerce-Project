@@ -32,8 +32,9 @@ const RegistrationForm = () => {
   useEffect(() => {
     AxiosInstance.get("/roles")
       .then((response) => {
+        console.log("Roles Data", response.data);
         setRoles(response.data);
-        //console.log(response.data);
+        
       })
       .catch((error) => console.error("Error:", error));
   }, []);
