@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { AxiosInstance } from "../api/axiosInstance";
 import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useSelector } from "react-redux";
 
 const RegistrationForm = () => {
   //React Hook Form kullanilarak formun durumunu yonetme
@@ -11,7 +12,7 @@ const RegistrationForm = () => {
     handleSubmit,
     formState: { errors },
     watch,
-  } = useForm();
+  } = useForm({ defaultValues: { role_id: 3 } });
 
   //React Router kullanarak tarayici gecmisi yonetme
 
@@ -23,21 +24,9 @@ const RegistrationForm = () => {
 
   //Rol bilgilerini ve diger durumlari yonetmek icin state kullanma
 
-  const [roles, setRoles] = useState([]);
-  const [selectedRoleID, setSelectedRoleID] = useState("3"); //default customer
+  const roles = useSelector((state) => state.global.roles);
+  const [selectedRoleID, setSelectedRoleID] = useState(3); //default customer
   const [loading, setLoading] = useState(false);
-
-  //Componentin yuklenmesi aninda rol bilgilerini API'den getirme
-
-  useEffect(() => {
-    AxiosInstance.get("/roles")
-      .then((response) => {
-        console.log("Roles Data", response.data);
-        setRoles(response.data);
-        
-      })
-      .catch((error) => console.error("Error:", error));
-  }, []);
 
   //Rol secimi degistiginde calisacak fonksiyon
 
@@ -93,11 +82,8 @@ const RegistrationForm = () => {
         .catch((error) => {
           //Hata durumunda
           console.log("Error:", error);
-          if (error.response.data.err.errno === 19) {
-            toast.error("This email address is already registered.");
-          } else {
-            toast.error(`${error.message}`);
-          }
+
+          toast.error("Hesap olusturulamadi.");
         })
         .finally(() => {
           //Loading durumunu sıfırlama
@@ -288,12 +274,11 @@ const RegistrationForm = () => {
                   {...register("bank_account", {
                     required: "Store Bank Account is required.",
                     pattern: {
-                      value:
-                        /^[A-Z]{2}[0-9]{2}[A-Z0-9]{4}[0-9]{7}([A-Z0-9]?){0,16}$/,
+                      value: /^TR\d{24}$/,
                       message: "Invalid IBAN.",
                     },
                   })}
-                  placeholder="Store Bank Account"
+                  placeholder="TRXXXXXXXXXXXXXXXXXXXXXXXX"
                 />
               </label>
               <div className="error text-red-500">
