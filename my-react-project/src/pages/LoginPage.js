@@ -17,16 +17,33 @@ const LoginPage = () => {
       <p className="title">Login Form</p>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-group">
-          <label className="email">
-            Email
-            <input type="text" {...register("email")} />
-          </label>
+          <label className="email">Email </label>
+          <input
+            type="email"
+            id="email"
+            {...register("email", {
+              required: "Email is required",
+              pattern: {
+                value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+                message: "Invalid email format",
+              },
+            })}
+            className="form-control"
+          />{" "}
+          {errors.email && (
+            <p className="error-message">{errors.email.message}</p>
+          )}
         </div>
         <div className="form-group">
-          <label className="label">
-            Password
-            <input type="password" {...register("password")} />
-          </label>
+          <label className="label">Password</label>
+          <input
+            type="password"
+            id="pssword"
+            {...register("password", { required: "Password is required" })}
+          />{" "}
+          {errors.password && (
+            <p className="error-message">{errors.password.message}</p>
+          )}
         </div>
         <button type="submit">Login</button>
       </form>
