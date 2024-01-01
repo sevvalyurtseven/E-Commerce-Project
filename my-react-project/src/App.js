@@ -11,6 +11,7 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { AxiosInstance } from "./api/axiosInstance";
 import { setRoles } from "./store/actions/globalActions";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -44,6 +45,9 @@ function App() {
         </Route>
         <Route path="/signup" exact>
           <SignUp />
+        </Route>
+        <Route path="/login" exact>
+          <LoginPage />
         </Route>
       </Switch>
     </div>
