@@ -67,7 +67,7 @@ function NavBar() {
           </h2>
           <FontAwesomeIcon icon={faBars} className="sm:hidden block" />
         </div>
-        <nav className="flex flex-col sm:flex-row items-center  gap-4 text-center text-neutral-500 font-normal sm:font-bold leading-normal tracking-wider pt-10 sm:pt-0">
+        <nav className="flex flex-col sm:flex-row items-center  gap-6 text-center text-neutral-500 font-normal sm:font-bold leading-normal tracking-wider pt-10 sm:pt-0">
           <Link to="/">Home</Link>
           <Link
             className="text-[#252B42] font-medium flex items-center"
@@ -87,8 +87,8 @@ function NavBar() {
         <div className=" text-sky-500  font-bold leading-normal tracking-wider flex  xl:flex-row items-center xl:gap-4 gap-5 pt-6 md:pt-0  ">
           {isLoggedIn ? (
             <div className="flex flex-wrap items-center px-2 gap-1">
-              <Gravatar email={user.email} className="rounded-full" />
-              <p>{user.name}</p>
+              <Gravatar email={user.email} className="rounded-full w-12" />
+              <p className="flex text-black px-3 tracking-wider">{user.name}</p>
             </div>
           ) : (
             <div className="flex flex-wrap items-center px-2 gap-1">
@@ -103,7 +103,7 @@ function NavBar() {
             </div>
           )}
         </div>
-        <div className=" text-sky-500  font-bold leading-normal tracking-tight flex flex-col xl:flex-row items-center xl:gap-14 gap-5 pt-6 md:pt-0  ">
+        <div className=" text-sky-500  font-bold leading-normal tracking-tight flex flex-col xl:flex-row items-center xl:gap-14 gap-5 pt-6  pb-4 ">
           <Link to="/">
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </Link>
@@ -116,7 +116,7 @@ function NavBar() {
         </div>
         <div>
           {user.name ? (
-            <div className="flex items-center px-2 gap-1">
+            <div className="flex items-center px-2 py-1 gap-3 tracking-wider text-white border border-sky-500 bg-sky-500  rounded-md ">
               <p>
                 <button onClick={() => handleLogout()}>Logout</button>
               </p>
