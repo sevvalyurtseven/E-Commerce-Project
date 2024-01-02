@@ -18,7 +18,11 @@ import { faEnvelope, faHeart } from "@fortawesome/free-regular-svg-icons";
 
 import { Link } from "react-router-dom";
 
+import Gravatar from "react-gravatar";
+import { useSelector } from "react-redux";
+
 function NavBar() {
+  const user = useSelector((state) => state.user.user);
   return (
     <div className="font-bold">
       <div className="xl:flex  hidden flex-wrap justify-between text-white text-sm font-bold leading-normal tracking-wider bg-[#252B42] px-8 py-5 ">
@@ -49,14 +53,19 @@ function NavBar() {
           <h2 className="text-slate-800 md:text-2xl text-base font-bold leading-loose tracking-wider">
             Bandage
           </h2>
-          <FontAwesomeIcon icon = {faBars} className="sm:hidden block" />
-          
+          <FontAwesomeIcon icon={faBars} className="sm:hidden block" />
         </div>
         <nav className="flex flex-col sm:flex-row items-center  gap-4 text-center text-neutral-500 font-normal sm:font-bold leading-normal tracking-wider pt-10 sm:pt-0">
           <Link to="/">Home</Link>
-          <Link className="text-[#252B42] font-medium flex items-center" to="/productlist">
+          <Link
+            className="text-[#252B42] font-medium flex items-center"
+            to="/productlist"
+          >
             Shop
-            <FontAwesomeIcon icon={faAngleDown} className="pl-3 hidden xl:block" />
+            <FontAwesomeIcon
+              icon={faAngleDown}
+              className="pl-3 hidden xl:block"
+            />
           </Link>
           <Link to="/about">About</Link>
           <Link to="/">Blog</Link>
@@ -64,14 +73,25 @@ function NavBar() {
           <Link to="/">Pages</Link>
         </nav>
         <div className=" text-sky-500  font-bold leading-normal tracking-wider flex  xl:flex-row items-center xl:gap-4 gap-5 pt-6 md:pt-0  ">
-          <FontAwesomeIcon icon={faUser} />
-          <Link to="/login"><span> Login</span></Link>
-          <span> /</span>
-          <Link to="/signup">
-            <span> Register</span>
-            
-          </Link></div>
-          <div className=" text-sky-500  font-bold leading-normal tracking-tight flex flex-col xl:flex-row items-center xl:gap-14 gap-5 pt-6 md:pt-0  ">
+          {user.name ? (
+            <div className="flex flex-wrap items-center px-2 gap-1">
+              <Gravatar email={user.email} className="w-5 h-5 rounded-full" />
+              <p>{user.name}</p>
+            </div>
+          ) : (
+            <div className="flex flex-wrap items-center px-2 gap-1">
+              <FontAwesomeIcon icon={faUser} />
+              <Link to="/login">
+                <span> Login</span>
+              </Link>
+              <span> /</span>
+              <Link to="/signup">
+                <span> Register</span>
+              </Link>
+            </div>
+          )}
+        </div>
+        <div className=" text-sky-500  font-bold leading-normal tracking-tight flex flex-col xl:flex-row items-center xl:gap-14 gap-5 pt-6 md:pt-0  ">
           <Link to="/">
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </Link>
