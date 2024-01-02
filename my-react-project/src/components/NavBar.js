@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAngleDown,
+  faArrowRightFromBracket,
   faBars,
   faCartShopping,
   faMagnifyingGlass,
@@ -19,10 +20,21 @@ import { faEnvelope, faHeart } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
 
 import Gravatar from "react-gravatar";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { userLogout } from "../store/actions/userActions";
 
 function NavBar() {
-  const user = useSelector((state) => state.user.user);
+  const { user, isLoggedIn } = useSelector((state) => state.user);
+
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const handleLogout = () => {
+    dispatch(userLogout());
+    history.push("/");
+  };
+
   return (
     <div className="font-bold">
       <div className="xl:flex  hidden flex-wrap justify-between text-white text-sm font-bold leading-normal tracking-wider bg-[#252B42] px-8 py-5 ">
@@ -73,9 +85,9 @@ function NavBar() {
           <Link to="/">Pages</Link>
         </nav>
         <div className=" text-sky-500  font-bold leading-normal tracking-wider flex  xl:flex-row items-center xl:gap-4 gap-5 pt-6 md:pt-0  ">
-          {user.name ? (
+          {isLoggedIn ? (
             <div className="flex flex-wrap items-center px-2 gap-1">
-              <Gravatar email={user.email} className="w-5 h-5 rounded-full" />
+              <Gravatar email={user.email} className="rounded-full" />
               <p>{user.name}</p>
             </div>
           ) : (
@@ -101,6 +113,16 @@ function NavBar() {
           <Link to="/">
             <FontAwesomeIcon icon={faHeart} />
           </Link>
+        </div>
+        <div>
+          {user.name ? (
+            <div className="flex items-center px-2 gap-1">
+              <p>
+                <button onClick={() => handleLogout()}>Logout</button>
+              </p>
+              <FontAwesomeIcon icon={faArrowRightFromBracket} />
+            </div>
+          ) : null}
         </div>
       </div>
     </div>
