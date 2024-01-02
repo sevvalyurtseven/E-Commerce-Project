@@ -297,6 +297,14 @@ const RegistrationForm = () => {
             "Submit"
           )}
         </button>
+        <div className="flex flex-col">
+          <p className="text-sm font-normal text-[#737373]">
+            Already have an account?{" "}
+            <a href="/login" className=" text-[#737373] underline">
+              Login here.
+            </a>
+          </p>
+        </div>
       </form>
     </div>
   );
