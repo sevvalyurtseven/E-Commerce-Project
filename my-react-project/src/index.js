@@ -12,23 +12,21 @@ import "react-toastify/dist/ReactToastify.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-        <ToastContainer
-          position="top-center"
-          autoClose={3000}
-          hideProgressBar={true}
-          newestOnTop={true}
-          closeOnClick
-          rtl={false}
-          draggable
-          theme="colored"
-        />
-      </BrowserRouter>
-    </Provider>
-  </React.StrictMode>
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={true}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        draggable
+        theme="colored"
+      />
+    </BrowserRouter>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
