@@ -10,7 +10,7 @@ import SignUp from "./pages/SignUp";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { AxiosInstance, renewAxiosInstance } from "./api/axiosInstance";
-import { setRoles } from "./store/actions/globalActions";
+import { setCategories, setRoles } from "./store/actions/globalActions";
 import LoginPage from "./pages/LoginPage";
 import { loginUser, logoutUser } from "./store/actions/userActions";
 
@@ -20,6 +20,10 @@ function App() {
   //Componentin yuklenmesi aninda rol bilgilerini API'den getirme
 
   useEffect(() => {
+    //Sign up formun role id'lerini fetch et!
+    dispatch(setRoles());
+    dispatch(setCategories());
+
     //Local'de token bilgisi var mi?
     const token = localStorage.getItem("token");
 
