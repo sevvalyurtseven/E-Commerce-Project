@@ -9,9 +9,10 @@ import ProductPage from "./pages/ProductPage";
 import SignUp from "./pages/SignUp";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { AxiosInstance } from "./api/axiosInstance";
+import { AxiosInstance, renewAxiosInstance } from "./api/axiosInstance";
 import { setRoles } from "./store/actions/globalActions";
 import LoginPage from "./pages/LoginPage";
+import { loginUser, logoutUser } from "./store/actions/userActions";
 
 function App() {
   const dispatch = useDispatch();
@@ -19,8 +20,31 @@ function App() {
   //Componentin yuklenmesi aninda rol bilgilerini API'den getirme
 
   useEffect(() => {
-    dispatch(setRoles());
-  }, []);
+    //Local'de token bilgisi var mi?
+    const token = localStorage.getItem("token");
+
+    //token varsa, backend'e request atarak kontrol edicek
+    if (token) {
+      //backend e istek gonder
+
+      AxiosInstance.get("/verify")
+        .then((response) => {
+          console.log("token verify res > ", response);
+          //login oldu
+
+          const user = response.data;
+          dispatch(loginUser(user));
+          renewAxiosInstance();
+          console.log("verified", user);
+        })
+        .catch((error) => {
+          console.error("token verify err > ", error);
+          dispatch(logoutUser());
+          localStorage.removeItem("token");
+          renewAxiosInstance();
+        });
+    }
+  }, [dispatch]);
 
   return (
     <div className="text-[#252B42]">
