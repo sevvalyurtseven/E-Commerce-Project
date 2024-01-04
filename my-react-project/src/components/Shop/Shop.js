@@ -6,9 +6,14 @@ import shop5 from "../../Assets/shop/media bg-cover3.png";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const Shop = () => {
-  const shopImgs = [shop1, shop2, shop3, shop4, shop5];
+  const categories = useSelector((state) => state.global.categories);
+  const firstFiveCategories = categories
+    .sort((a, b) => b.rating - a.rating)
+    .slice(0, 5);
 
   return (
     <div className="bg-[#FAFAFA] flex flex-col py-10 px-10">
@@ -29,16 +34,26 @@ const Shop = () => {
         </div>
       </div>
 
-      <div className="flex justify-center items-center py-10 gap-4 flex-wrap">
-        {shopImgs.map((card, index) => (
+      <div className="flex justify-center items-center py-10 gap-4 flex-wrap md:flex-nowrap">
+        {firstFiveCategories.map((category, index) => (
           <div key={index}>
-            <div className="relative text-center">
-              <img src={card} alt="shop"></img>
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-white font-bold text-base leading-6">
-                <h6>CLOTHS</h6>
-                <h6>5 Items</h6>
+            <Link
+              to={`/shopping/${category.gender === "k" ? "Kadin" : "Erkek"}/${
+                category.title
+              }`}
+            >
+              <div className="relative text-center">
+                <img
+                  className="object-cover sm:w-64 w-80 h-96"
+                  src={category.img}
+                  alt={category.title}
+                />
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-white font-bold text-base leading-6">
+                  <h6>{category.gender === "k" ? "KADIN" : "ERKEK"}</h6>
+                  <h6>{category.title}</h6>
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         ))}
       </div>
