@@ -15,10 +15,16 @@ export const setRoles = () => (dispatch) => {
     .catch((error) => console.error("Error:", error));
 };
 
-export const setCategories = (categories) => ({
-  type: SET_CATEGORIES,
-  payload: categories,
-});
+export const setCategories = () => (dispatch) => {
+  return AxiosInstance.get("/categories")
+    .then((res) => {
+      console.log("Categories Fetched:", res);
+      const categories = { type: SET_CATEGORIES, payload: res.data };
+
+      dispatch(categories);
+    })
+    .catch((error) => console.error("Error:", error));
+};
 
 export const setTheme = (theme) => ({
   type: SET_THEME,
