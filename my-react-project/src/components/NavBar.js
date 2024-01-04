@@ -23,6 +23,7 @@ import Gravatar from "react-gravatar";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { userLogout } from "../store/actions/userActions";
+import ShopDropDown from "../dropdowns/ShopDropDown";
 
 function NavBar() {
   const { user, isLoggedIn } = useSelector((state) => state.user);
@@ -74,10 +75,7 @@ function NavBar() {
             to="/productlist"
           >
             Shop
-            <FontAwesomeIcon
-              icon={faAngleDown}
-              className="pl-3 hidden xl:block"
-            />
+            <ShopDropDown />
           </Link>
           <Link to="/about">About</Link>
           <Link to="/">Blog</Link>

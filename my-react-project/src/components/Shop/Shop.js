@@ -44,12 +44,14 @@ const Shop = () => {
             >
               <div className="relative text-center">
                 <img
-                  className="object-cover sm:w-64 w-80 h-96"
+                  className="object-cover sm:w-64 w-80 sm:h-72 h-96 filter brightness-75 grayscale-50"
                   src={category.img}
                   alt={category.title}
                 />
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-white font-bold text-base leading-6">
-                  <h6>{category.gender === "k" ? "KADIN" : "ERKEK"}</h6>
+                <div className="absolute inset-7 flex flex-col items-center justify-center text-white font-bold text-base tracking-wider">
+                  <h6 className="text-2xl">
+                    {category.gender === "k" ? "KADIN" : "ERKEK"}
+                  </h6>
                   <h6>{category.title}</h6>
                 </div>
               </div>
