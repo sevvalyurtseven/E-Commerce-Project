@@ -10,7 +10,6 @@ import manken9 from "../../Assets/mankencards2/product-cover-5-8.png";
 import manken10 from "../../Assets/mankencards2/product-cover-5-9.png";
 import manken11 from "../../Assets/mankencards2/product-cover-5-10.png";
 import manken12 from "../../Assets/mankencards2/product-cover-5-11.png";
-import colors from "../../Assets/post/product-colors.png";
 
 import {
   faAngleDown,
@@ -20,22 +19,10 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import PageButton from "../PageButton";
-
+import ProductCard from "./ProductCard";
+import { useSelector } from "react-redux";
 const ProductPageCard = () => {
-  const productCards = [
-    manken1,
-    manken2,
-    manken3,
-    manken4,
-    manken5,
-    manken6,
-    manken7,
-    manken8,
-    manken9,
-    manken10,
-    manken11,
-    manken12,
-  ];
+  const products = useSelector((state) => state.product.productList);
 
   const [selectedFilter, setSelectedFilter] = useState(""); // Başlangıçta seçilen filtre yok
 
@@ -70,6 +57,8 @@ const ProductPageCard = () => {
               className="text-neutral-500 text-sm font-normal leading-7 tracking-wider"
             >
               <option value="">Popularity</option>
+              <option value="">Price Low to Low</option>
+              <option value="">Price Low to High</option>
             </select>
           </div>
           <div className="flex items-center border border-solid bg-sky-500 py-5 px-8 rounded-[5px]">
@@ -80,28 +69,17 @@ const ProductPageCard = () => {
         </div>
       </div>
       <div className="flex items-center justify-center gap-8 flex-wrap px-20 py-14">
-        {productCards.map((image, index) => (
-          <div key={index} className="flex flex-col items-center   gap-5 py-6">
-            <img src={image} alt={`card ${index}`} />
-            <h5 className="text-slate-800 text-base font-bold leading-normal tracking-wider">Graphic Design</h5>
-            <p className="text-center text-neutral-500 text-sm font-bold leading-normal tracking-wider">English Department</p>
-            <div className="flex  justify-center items-center gap-2">
-              <h5 className="text-center text-stone-300 text-base font-bold leading-normal tracking-wider">$16.48</h5>
-              <h5 className="text-center text-teal-700 text-base font-bold leading-normal tracking-wider">$6.48</h5>
-              
-            </div>
-            <img src = {colors}/>
+        {products.map((p, index) => (
+          <div key={index} className="flex flex-col py-4 gap-4 w-1/5">
+            <ProductCard product={p} />
           </div>
-          
-        ))} 
-         
-        </div>
-        
-       <div className="flex items-center flex-col">
-        <PageButton/>
-        </div>
-        </div>
-   
+        ))}
+      </div>
+
+      <div className="flex items-center flex-col">
+        <PageButton />
+      </div>
+    </div>
   );
 };
 

@@ -13,6 +13,7 @@ import { AxiosInstance, renewAxiosInstance } from "./api/axiosInstance";
 import { setCategories, setRoles } from "./store/actions/globalActions";
 import LoginPage from "./pages/LoginPage";
 import { loginUser, logoutUser } from "./store/actions/userActions";
+import { fetchProducts } from "./store/actions/productActions";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ function App() {
     //Sign up formun role id'lerini fetch et!
     dispatch(setRoles());
     dispatch(setCategories());
+    dispatch(fetchProducts());
 
     //Local'de token bilgisi var mi?
     const token = localStorage.getItem("token");
