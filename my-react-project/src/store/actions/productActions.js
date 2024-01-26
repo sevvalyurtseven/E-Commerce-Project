@@ -31,15 +31,23 @@ export const setFetchState = (fetchState) => ({
   payload: fetchState,
 });
 
-export const fetchProducts = () => {
+export const fetchProducts = (category, filter, sort) => {
   return (dispatch) => {
-    AxiosInstance.get("/products")
+    const queryParams = {};
+    if (category) queryParams.category = category;
+    if (filter) queryParams.filter = filter;
+    if (sort) queryParams.sort = sort;
+
+    AxiosInstance.get("/products", { params: queryParams })
       .then((res) => {
         console.log("urunler", res.data.products);
         dispatch(setFetchState("FETCHING"));
-        dispatch(setProductList(res.data.products));
-        dispatch(setTotalProductCount(res.data.total));
-        dispatch(setFetchState("FETCHED"));
+
+        setTimeout(() => {
+          dispatch(setProductList(res.data.products));
+          dispatch(setTotalProductCount(res.data.total));
+          dispatch(setFetchState("FETCHED"));
+        }, 1000);
       })
       .catch((error) => {
         console.error("Error:", error);
