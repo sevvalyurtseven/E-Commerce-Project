@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/070195e3-6c52-4a1f-bd70-3c07463284f6/deploy-status)](https://app.netlify.com/sites/sevvalsecommerce/deploys)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
