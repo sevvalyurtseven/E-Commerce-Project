@@ -1,29 +1,41 @@
 import {
   SET_PRODUCT_LIST,
+  CLEAR_PRODUCT_LIST,
+  SET_BEST_SELLERS,
   SET_TOTAL_PRODUCT_COUNT,
-  SET_PAGE_COUNT,
-  SET_ACTIVATE_PAGE,
+  SET_OFFSET,
   SET_FETCH_STATE,
 } from "../actions/productActions";
 
 const initialState = {
   productList: [],
+  bestSellers: [],
   totalProductCount: 0,
-  pageCount: 0,
-  activePage: 1,
+  offset: 0,
   fetchState: "NOT_FETCHED",
 };
 
 export const productReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_PRODUCT_LIST:
-      return { ...state, productList: action.payload };
+      return {
+        ...state,
+        productList: [...state.productList, ...action.payload],
+      };
+    case CLEAR_PRODUCT_LIST:
+      return {
+        ...state,
+        productList: [],
+      };
+    case SET_BEST_SELLERS:
+      return {
+        ...state,
+        bestSellers: action.payload,
+      };
     case SET_TOTAL_PRODUCT_COUNT:
       return { ...state, totalProductCount: action.payload };
-    case SET_PAGE_COUNT:
-      return { ...state, pageCount: action.payload };
-    case SET_ACTIVATE_PAGE:
-      return { ...state, activePage: action.payload };
+    case SET_OFFSET:
+      return { ...state, offset: action.payload };
     case SET_FETCH_STATE:
       return { ...state, fetchState: action.payload };
     default:
