@@ -70,13 +70,13 @@ function NavBar() {
         </div>
         <nav className="flex flex-col sm:flex-row items-center  gap-6 text-center text-neutral-500 font-normal sm:font-bold leading-normal tracking-wider pt-10 sm:pt-0">
           <Link to="/">Home</Link>
-          <Link
+          <div
             className="text-[#252B42] font-medium flex items-center"
-            to="/productlist"
+            onClick={() => history.push("/productlist")}
           >
             Shop
             <ShopDropDown />
-          </Link>
+          </div>
           <Link to="/about">About</Link>
           <Link to="/">Blog</Link>
           <Link to="/contact">Contact</Link>
