@@ -58,6 +58,9 @@ function App() {
         <Route path="/" exact>
           <HomePage />
         </Route>
+        <Route path="/productlist/:filter" exact>
+          <ProductListPage />
+        </Route>
         <Route path="/productlist" exact>
           <ProductListPage />
         </Route>
@@ -69,6 +72,9 @@ function App() {
         </Route>
         <Route path="/contact" exact>
           <ContactPage />
+        </Route>
+        <Route path="/product/:category/:productId/:productNameSlug" exact>
+          <ProductPage />
         </Route>
         <Route path="/product" exact>
           <ProductPage />
