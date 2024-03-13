@@ -1,6 +1,18 @@
+import axios from "axios";
 import girl from "../../Assets/ABOUT/aboutbanner.png";
 
 function HeaderContent() {
+  const handleClick = () => {
+    axios
+      .get("http://localhost:9898/category/")
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className="flex flex-col items-center">
       <div className="flex flex-col sm:flex-row flex-wrap sm:flex-nowrap sm:justify-start justify-center sm:items-start items-center  sm:gap-44 gap-10">
@@ -12,12 +24,16 @@ function HeaderContent() {
             ABOUT US
           </h1>
           <p className="text-neutral-500 text-2xl font-normal leading-7 tracking-wider text-center sm:text-start sm:w-full w-4/5">
-            We know how large objects will act, <br className="hidden sm:block"/>
+            We know how large objects will act,{" "}
+            <br className="hidden sm:block" />
             but things on a small scale
           </p>
 
           <div className="sm:px-7 px-10 py-3 bg-[#23A6F0] rounded-5 flex-col items-center gap-3 border-0 border-solid rounded">
-            <button className="text-white text-sm font-bold leading-snug tracking-tight">
+            <button
+              onClick={handleClick}
+              className="text-white text-sm font-bold leading-snug tracking-tight"
+            >
               Get Quote Now
             </button>
           </div>
@@ -33,13 +49,15 @@ function HeaderContent() {
         </h5>
         <div className="flex flex-wrap sm:flex-nowrap sm:justify-between justify-center  gap-[6rem] sm:w-full w-4/5">
           <h2 className="text-slate-800 text-2xl font-bold leading-7 tracking-tight sm:text-start text-center sm:w-full w-4/5">
-            Met minim Mollie non desert <br className="hidden sm:block"/> Alamo est sit cliquey dolor do{" "}
-            <br className="hidden sm:block"/> met sent.
+            Met minim Mollie non desert <br className="hidden sm:block" /> Alamo
+            est sit cliquey dolor do <br className="hidden sm:block" /> met
+            sent.
           </h2>
 
           <h5 className="text-neutral-500 text-sm font-normal leading-tight tracking-wider">
             Problems trying to resolve the conflict between the two major realms
-            of <br className="hidden sm:block"/> Classical physics: Newtonian mechanics
+            of <br className="hidden sm:block" /> Classical physics: Newtonian
+            mechanics
           </h5>
         </div>
       </div>
