@@ -11,8 +11,18 @@ import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faStar as emptyStar } from "@fortawesome/free-regular-svg-icons";
 
 import Slider from "../Slider";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
 function ProductHeader() {
+  const selectedProduct = useSelector((store) => store.product);
+
+  const { productId } = useParams();
+
+  const selectedId = selectedProduct.productList.find(
+    (item) => item.id == productId
+  );
+
   return (
     <div className="bg-[#FAFAFA] sm:px-20 px-0">
       <div className="flex items-center sm:justify-start justify-center gap-3 py-10">
@@ -28,10 +38,10 @@ function ProductHeader() {
         </h4>
       </div>
       <div className="flex justify-start items-start flex-wrap md:flex-nowrap py-6">
-        <Slider/>
+        <Slider />
         <div className="flex flex-col  py-6  sm:px-16 px-10">
           <h3 className="text-slate-800 text-xl font-medium leading-[30px] tracking-wider">
-            Floating Phone
+            {selectedId.name}
           </h3>
           <div className="flex items-center gap-1 py-4 ">
             <FontAwesomeIcon icon={faStar} className="text-[#F3CD03]" />
@@ -41,27 +51,24 @@ function ProductHeader() {
             <FontAwesomeIcon icon={emptyStar} className="text-[#F3CD03]" />
 
             <p className="text-neutral-500 text-sm font-bold leading-normal tracking-wider">
-              10 Reviews
+              {selectedId.rating}
             </p>
           </div>
           <div className="flex flex-col">
             <h4 className=" text-slate-800 text-2xl font-bold leading-loose tracking-wider">
-              $1,139.33
+              ${selectedId.price}
             </h4>
             <div className="flex gap-2">
               <h5 className="text-neutral-500 text-sm font-bold leading-normal tracking-wider">
                 Availability :
               </h5>
               <h5 className="text-sky-500 text-sm font-bold leading-normal tracking-wider">
-                In Stock{" "}
+                {selectedId.stock}
               </h5>
             </div>
             <div className="py-10">
               <p className="text-zinc-500 text-sm font-normal leading-tight tracking-wider">
-                Met minim Mollie non desert Alamo est sit cliquey dolor <br className="hidden sm:block" />
-                do met sent. RELIT official consequent door ENIM RELIT Mollie.{" "}
-                <br className="hidden sm:block" />
-                Excitation venial consequent sent nostrum met.
+                {selectedId.description}
               </p>
             </div>
             <hr></hr>
