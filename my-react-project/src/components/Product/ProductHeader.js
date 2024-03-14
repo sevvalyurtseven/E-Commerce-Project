@@ -5,6 +5,7 @@ import {
   faStar,
   faEye,
   faCartShopping,
+  faArrowCircleLeft,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
@@ -13,6 +14,7 @@ import { faStar as emptyStar } from "@fortawesome/free-regular-svg-icons";
 import Slider from "../Slider";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function ProductHeader() {
   const selectedProduct = useSelector((store) => store.product);
@@ -23,19 +25,34 @@ function ProductHeader() {
     (item) => item.id == productId
   );
 
+  const history = useHistory();
+
   return (
     <div className="bg-[#FAFAFA] sm:px-20 px-0">
       <div className="flex items-center sm:justify-start justify-center gap-3 py-10">
-        <h4 className=" text-slate-800 text-sm font-bold leading-normal tracking-wider">
+        <button
+          className=" text-slate-800 text-sm font-bold leading-normal tracking-wider cursor-pointer hover:text-sky-500 "
+          onClick={() => history.goBack()}
+        >
+          {" "}
+          <FontAwesomeIcon icon={faArrowCircleLeft} className="text-xl" />
+        </button>
+        <button
+          className=" text-slate-800 text-sm font-bold leading-normal tracking-wider cursor-pointer hover:text-sky-500 "
+          onClick={() => history.push("/")}
+        >
           Home
-        </h4>
+        </button>
         <FontAwesomeIcon
           icon={faAngleRight}
           className="text-xl text-stone-300 "
         />
-        <h4 className=" text-stone-300 text-sm font-bold leading-normal tracking-wider">
+        <button
+          className=" text-stone-300 text-sm font-bold leading-normal tracking-wider cursor-pointer hover:text-sky-500"
+          onClick={() => history.push("/productlist")}
+        >
           Shop
-        </h4>
+        </button>
       </div>
       <div className="flex justify-start items-start flex-wrap md:flex-nowrap py-6">
         <Slider />
