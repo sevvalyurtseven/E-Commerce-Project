@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import {
   ADD_TO_CART,
   REMOVE_FROM_CART,
@@ -15,6 +16,16 @@ const initialState = {
 export const shoppingCartReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TO_CART:
+      const existingProduct = state.cart.find(
+        (item) => item.id === action.payload.id
+      );
+
+      if (existingProduct) {
+        toast.error("You have already added this product to your cart!", {
+          position: "bottom-center",
+        });
+        return state;
+      }
       return { ...state, cart: [...state.cart, action.payload] };
     case REMOVE_FROM_CART:
       return {
