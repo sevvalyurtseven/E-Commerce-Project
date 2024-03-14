@@ -66,7 +66,7 @@ const ProductCard = ({ product }) => {
               ${product.price}
             </h5>
           </div>
-          <div className="flex flex-row justify-center items-center py-5">
+          <div className="flex flex-row justify-center items-center py-3">
             <img src={colors} />
           </div>
         </div>
@@ -74,7 +74,7 @@ const ProductCard = ({ product }) => {
       <div className="pb-4">
         <button
           onClick={handleClick}
-          className="text-center text-teal-700 text-base font-bold leading-normal tracking-wider border rounded"
+          className="text-center text-white text-base font-bold leading-normal tracking-wider border bg-sky-500 rounded-md px-4 py-2"
         >
           Add To Cart
         </button>
