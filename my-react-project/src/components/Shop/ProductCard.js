@@ -4,6 +4,11 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { addToCart } from "../../store/actions/shoppingCartActions";
+import {
+  faCartShopping,
+  faShoppingBasket,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ProductCard = ({ product }) => {
   const categoryMap = {
@@ -77,6 +82,7 @@ const ProductCard = ({ product }) => {
           className="text-center text-white text-base font-bold leading-normal tracking-wider border bg-sky-500 rounded-md px-4 py-2"
         >
           Add To Cart
+          <FontAwesomeIcon icon={faCartShopping} className="text-white pl-2" />
         </button>
       </div>
     </div>
