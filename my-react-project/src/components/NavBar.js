@@ -24,6 +24,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { userLogout } from "../store/actions/userActions";
 import ShopDropDown from "../dropdowns/ShopDropDown";
+import ShoppingCartDropDown from "../dropdowns/ShoppingCartDropDown";
 
 function NavBar() {
   const { user, isLoggedIn } = useSelector((state) => state.user);
@@ -105,9 +106,9 @@ function NavBar() {
           <Link to="/">
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </Link>
-          <Link to="/">
-            <FontAwesomeIcon icon={faCartShopping} />
-          </Link>
+          <button className="flex flex-col xl:flex-row items-center">
+            <ShoppingCartDropDown />
+          </button>
           <Link to="/">
             <FontAwesomeIcon icon={faHeart} />
           </Link>
