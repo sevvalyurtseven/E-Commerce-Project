@@ -3,7 +3,10 @@ import colors from "../../Assets/post/product-colors.png";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import { addToCart } from "../../store/actions/shoppingCartActions";
+import {
+  ADD_TO_CART,
+  addToCart,
+} from "../../store/actions/shoppingCartActions";
 import {
   faCartShopping,
   faShoppingBasket,
@@ -27,29 +30,7 @@ const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    for (let i = 0; i < isProductInCart.length; i++) {
-      if (product.id === isProductInCart[i].id) {
-        console.log("Product is already in the cart!");
-        toast.warn("Product is already in the cart", {
-          position: "bottom-center",
-          autoClose: 3000,
-          style: {
-            color: "white",
-            background: "red",
-          },
-        });
-        return;
-      }
-    }
-    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
-    const updatedCart = [...existingCart, product];
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
-    dispatch(addToCart(product));
-    console.log("CARD PRODUCT>>>>", product);
-    toast.success("Successfully added to shop cart", {
-      position: "bottom-center",
-      autoClose: 3000,
-    });
+    dispatch({ type: ADD_TO_CART, payload: product });
   };
 
   return (
