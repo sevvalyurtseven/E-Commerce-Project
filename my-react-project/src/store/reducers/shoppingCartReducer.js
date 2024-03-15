@@ -16,28 +16,47 @@ const initialState = {
 export const shoppingCartReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TO_CART:
-      const existingProduct = state.cart.find(
-        (item) => item.id === action.payload.id
+      const updatedCart = [...state.cart];
+      const productIndex = updatedCart.findIndex(
+        (item) => item.product.id === action.payload.id
       );
 
-      if (existingProduct) {
-        toast.error("You have already added this product to your cart!", {
-          position: "bottom-center",
+      if (productIndex !== -1) {
+        updatedCart[productIndex] = {
+          ...updatedCart[productIndex],
+          count: updatedCart[productIndex].count + 1,
+        };
+      } else {
+        updatedCart.push({
+          count: 1,
+          product: action.payload,
         });
-        return state;
       }
-      return { ...state, cart: [...state.cart, action.payload] };
+      return { ...state, cart: updatedCart };
+
     case REMOVE_FROM_CART:
+      const newCart = state.cart
+        .map((item) =>
+          item.product.id === action.payload.id
+            ? { ...item, count: item.count > 1 ? item.count - 1 : 0 }
+            : item
+        )
+        .filter((item) => item.count > 0);
+
       return {
         ...state,
-        cart: state.cart.filter((item) => item.product.id !== action.payload),
+        cart: newCart,
       };
+
     case SET_PAYMENT:
       return { ...state, payment: action.payload };
+
     case SET_ADDRESS:
       return { ...state, address: action.payload };
+
     case CLEAR_CART:
       return { ...state, cart: initialState.cart };
+
     default:
       return state;
   }

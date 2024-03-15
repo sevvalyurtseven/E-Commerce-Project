@@ -4,9 +4,9 @@ export const CLEAR_CART = "CLEAR_CART";
 export const SET_PAYMENT = "SET_PAYMENT";
 export const SET_ADDRESS = "SET_ADDRESS";
 
-export const addToCart = (product, count) => ({
+export const addToCart = (product) => ({
   type: ADD_TO_CART,
-  payload: { product, count },
+  payload: product,
 });
 export const removeFromCart = (productId) => ({
   type: REMOVE_FROM_CART,
