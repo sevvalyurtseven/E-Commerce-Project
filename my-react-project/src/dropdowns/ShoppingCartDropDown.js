@@ -6,6 +6,7 @@ import {
 } from "../store/actions/shoppingCartActions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const ShoppingCartDropDown = () => {
   const dispatch = useDispatch();
@@ -15,6 +16,8 @@ const ShoppingCartDropDown = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   const totalProductCount = cart.reduce((total, item) => total + item.count, 0);
+
+  const history = useHistory();
 
   const increment = (item) => {
     dispatch(addToCart(item.product));
@@ -74,7 +77,12 @@ const ShoppingCartDropDown = () => {
               </div>
             ))}
             <div className="flex justify-evenly">
-              <button className="bg-sky-500 text-white text-sm rounded p-1 px-2">
+              <button
+                onClick={() => {
+                  history.push("/shoppingcart");
+                }}
+                className="bg-sky-500 text-white text-sm rounded p-1 px-2"
+              >
                 Sepete Git
               </button>
               <button className="bg-sky-500 text-white text-sm rounded p-1 px-2">

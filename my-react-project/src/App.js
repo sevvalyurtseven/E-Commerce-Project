@@ -14,7 +14,7 @@ import { setCategories, setRoles } from "./store/actions/globalActions";
 import LoginPage from "./pages/LoginPage";
 import { loginUser, logoutUser } from "./store/actions/userActions";
 import { fetchProducts } from "./store/actions/productActions";
-
+import ShoppingCartPage from "./pages/ShoppingCartPage";
 function App() {
   const dispatch = useDispatch();
 
@@ -84,6 +84,9 @@ function App() {
         </Route>
         <Route path="/login" exact>
           <LoginPage />
+        </Route>
+        <Route path="/shoppingcart" exact>
+          <ShoppingCartPage />
         </Route>
       </Switch>
     </div>

@@ -4,6 +4,7 @@ import {
   REMOVE_FROM_CART,
   SET_ADDRESS,
   SET_PAYMENT,
+  REMOVE_THIS_PRODUCT,
   CLEAR_CART,
 } from "../actions/shoppingCartActions";
 
@@ -56,6 +57,20 @@ export const shoppingCartReducer = (state = initialState, action) => {
 
     case CLEAR_CART:
       return { ...state, cart: initialState.cart };
+
+    case REMOVE_THIS_PRODUCT:
+      const t = state.cart.map((item) => {
+        if (item.product.id === action.payload) {
+          // Update count to 0 for the removed product
+          return { ...item, count: 0 };
+        }
+        return item;
+      });
+
+      return {
+        ...state,
+        cart: t.filter((item) => item.count > 0), // Remove items with count 0
+      };
 
     default:
       return state;
