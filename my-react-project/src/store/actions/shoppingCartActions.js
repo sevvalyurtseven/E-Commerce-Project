@@ -4,6 +4,7 @@ export const CLEAR_CART = "CLEAR_CART";
 export const SET_PAYMENT = "SET_PAYMENT";
 export const SET_ADDRESS = "SET_ADDRESS";
 export const REMOVE_THIS_PRODUCT = "REMOVE_THIS_PRODUCT";
+export const CHECKED_PRODUCT = "CHECKED_PRODUCT";
 
 export const addToCart = (product) => ({
   type: ADD_TO_CART,
@@ -29,4 +30,9 @@ export const setPayment = (payment) => ({
 export const setAddress = (address) => ({
   type: SET_ADDRESS,
   payload: address,
+});
+
+export const checkedProduct = (productId) => ({
+  type: CHECKED_PRODUCT,
+  payload: productId,
 });

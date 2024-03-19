@@ -6,6 +6,7 @@ import {
   SET_PAYMENT,
   REMOVE_THIS_PRODUCT,
   CLEAR_CART,
+  CHECKED_PRODUCT,
 } from "../actions/shoppingCartActions";
 
 const initialState = {
@@ -17,23 +18,49 @@ const initialState = {
 export const shoppingCartReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TO_CART:
-      const updatedCart = [...state.cart];
-      const productIndex = updatedCart.findIndex(
+      const existingProduct = state.cart.find(
         (item) => item.product.id === action.payload.id
       );
 
-      if (productIndex !== -1) {
-        updatedCart[productIndex] = {
-          ...updatedCart[productIndex],
-          count: updatedCart[productIndex].count + 1,
+      if (existingProduct) {
+        localStorage.setItem(
+          "shoppingCart",
+          JSON.stringify({
+            ...state,
+            cart: state.cart.map((item) =>
+              item.product.id === action.payload.id
+                ? { ...item, count: item.count + 1 }
+                : item
+            ),
+          })
+        );
+        return {
+          ...state,
+          cart: state.cart.map((item) =>
+            item.product.id === action.payload.id
+              ? { ...item, count: item.count + 1 }
+              : item
+          ),
         };
       } else {
-        updatedCart.push({
-          count: 1,
-          product: action.payload,
-        });
+        localStorage.setItem(
+          "shoppingCart",
+          JSON.stringify({
+            ...state,
+            cart: [
+              ...state.cart,
+              { product: action.payload, count: 1, checked: false },
+            ],
+          })
+        );
+        return {
+          ...state,
+          cart: [
+            ...state.cart,
+            { product: action.payload, count: 1, checked: false },
+          ],
+        };
       }
-      return { ...state, cart: updatedCart };
 
     case REMOVE_FROM_CART:
       const newCart = state.cart
@@ -47,6 +74,24 @@ export const shoppingCartReducer = (state = initialState, action) => {
       return {
         ...state,
         cart: newCart,
+      };
+    case CHECKED_PRODUCT:
+      const checkedItemId = action.payload.id;
+      const updatedCartt = state.cart.map((item) => {
+        if (item.product.id === checkedItemId) {
+          return { ...item, checked: !item.checked };
+        }
+        return item;
+      });
+
+      localStorage.setItem(
+        "shoppingCart",
+        JSON.stringify({ ...state, cart: updatedCartt })
+      );
+
+      return {
+        ...state,
+        cart: updatedCartt,
       };
 
     case SET_PAYMENT:
