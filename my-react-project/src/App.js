@@ -15,6 +15,7 @@ import LoginPage from "./pages/LoginPage";
 import { loginUser, logoutUser } from "./store/actions/userActions";
 import { fetchProducts } from "./store/actions/productActions";
 import ShoppingCartPage from "./pages/ShoppingCartPage";
+import OrderPage from "./pages/OrderPage";
 function App() {
   const dispatch = useDispatch();
 
@@ -87,6 +88,9 @@ function App() {
         </Route>
         <Route path="/shoppingcart" exact>
           <ShoppingCartPage />
+        </Route>
+        <Route path="/order" exact>
+          <OrderPage />
         </Route>
       </Switch>
     </div>
