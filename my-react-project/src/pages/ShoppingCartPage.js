@@ -9,11 +9,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShippingFast, faTrash } from "@fortawesome/free-solid-svg-icons";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const ShoppingCartPage = () => {
   const { cart } = useSelector((state) => state.shoppingCart);
   const totalProductCount = cart.reduce((total, item) => total + item.count, 0);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const toggleChecked = (product) => {
     dispatch(checkedProduct(product, product.count * -1));
@@ -140,7 +142,12 @@ const ShoppingCartPage = () => {
             </div>
           </div>
           <div className="p-4">
-            <button className="w-full bg-sky-500 text-white font-semibold py-3 rounded hover:bg-sky-600 transition-colors duration-300">
+            <button
+              onClick={() => {
+                history.push("/order");
+              }}
+              className="w-full bg-sky-500 text-white font-semibold py-3 rounded hover:bg-sky-600 transition-colors duration-300"
+            >
               Create Order
             </button>
           </div>
