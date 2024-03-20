@@ -15,7 +15,7 @@ import LoginPage from "./pages/LoginPage";
 import { loginUser, logoutUser } from "./store/actions/userActions";
 import { fetchProducts } from "./store/actions/productActions";
 import ShoppingCartPage from "./pages/ShoppingCartPage";
-import { OrderPage } from "./pages/OrderPage";
+import OrderPage from "./pages/OrderPage";
 function App() {
   const dispatch = useDispatch();
 
